@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Alloy.Business.EditorDescriptors;
 using Alloy.Models.Blocks;
 using EPiServer.SpecializedProperties;
 
@@ -36,6 +37,10 @@ public class StartPage : SitePageData
         Order = 320)]
     [CultureSpecific]
     public virtual ContentArea MainContentArea { get; set; }
+
+    [Display(GroupName = SystemTabNames.Content, Order = 200)]
+    [UIHint("todolist")]
+    public virtual string ToDoList { get; set; }
 
     [Display(GroupName = Globals.GroupNames.SiteSettings, Order = 300)]
     public virtual LinkItemCollection ProductPageLinks { get; set; }
